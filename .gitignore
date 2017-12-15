@@ -1,0 +1,11 @@
+# dependencies
+node_modules
+
+# logs
+*.log
+
+# Backpack build
+build
+
+# Mac file
+.DS_Store

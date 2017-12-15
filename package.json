@@ -9,8 +9,7 @@
     "build": "backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "precommit": "npm run lint",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "ci": "npm run lint && npm run build"
   },
   "dependencies": {

@@ -16,10 +16,7 @@ const socketIo = (io) => {
       socket.join(channelId)
       socket.room = channelId
 
-      let users = map(io.sockets.adapter.rooms[channelId].sockets, (_, id) => {
-        return { id }
-      })
-
+      let users = getUsers(channelId)
       console.log(`ready: ${socket.id}, channel: ${channelId}, users: ${JSON.stringify(users)}`)
       io.to(channelId).emit('users', {
         initiator: socket.id,
@@ -27,6 +24,12 @@ const socketIo = (io) => {
       })
     })
   })
+
+  function getUsers(channelId) {
+    return map(io.sockets.adapter.rooms[channelId].sockets, (_, id) => {
+      return { id }
+    })
+  }
 }
 
 export default socketIo

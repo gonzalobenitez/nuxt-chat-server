@@ -13,11 +13,12 @@
     "ci": "npm run lint && npm run build"
   },
   "dependencies": {
+    "@feathersjs/express": "^1.1.2",
+    "@feathersjs/feathers": "^3.0.4",
+    "@feathersjs/socketio": "^3.0.2",
     "config": "^1.28.1",
     "cross-env": "^5.0.1",
     "crypto": "^1.0.1",
-    "feathers": "^2.2.3",
-    "feathers-socketio": "^2.0.1",
     "lodash": "^4.17.4",
     "source-map-support": "^0.4.15",
     "uws": "^9.14.0"

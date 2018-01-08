@@ -1,6 +1,7 @@
 import config from 'config'
-import feathers from 'feathers'
-import socketio from 'feathers-socketio'
+import feathers from '@feathersjs/feathers'
+import express from '@feathersjs/express'
+import socketio from '@feathersjs/socketio'
 import createServer from './server'
 import handleSocket from './socket'
 import services from './services'
@@ -11,7 +12,7 @@ const PORT = process.env.PORT || 3050
 
 console.log(`WebSocket URL: ${SOCKET_URL}`)
 // create app
-const app = feathers()
+const app = express(feathers())
 // configure socket io
 app.configure(socketio({
   wsEngine: 'uws',
